@@ -14,6 +14,21 @@ def is_prime(target):
             return False
     return True
 
+def is_prime_req(target):
+    if target<2:
+        return False
+    return is_prime_req_func(target,2)
+
+def is_prime_req_func(target,ind):
+    if (target%ind)==0:
+            return False
+    if ind >= int(target/2)+1:
+        return True
+    return is_prime_req_func(target,ind+1)
+
+    
+    
+
 
 def factorial(n):
     """מחזירה את הפקטוריאל של מספר שלם n"""
@@ -29,3 +44,5 @@ if __name__=="__main__":
     wlcome()
     print(is_prime((15)))
     print(factorial(5))  # פלט צפוי: 120
+    print("new func")
+    print(is_prime_req(17))
