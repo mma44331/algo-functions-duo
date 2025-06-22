@@ -1,23 +1,17 @@
 def fibonnacci(num):
-    arr=[]
-    if num==1:
-        arr.append(1)
-        return arr
-    if num==2:
-        arr.append(1)
-        arr.append(1)
-        return arr
-    arr.append(1)
-    arr.append(1)
-    fib_num1=1
-    fib_num2=1
-    fib_num=0
+    if num < 1:
+        print('erreur is not a valid number')
+        return
+    if num == 1:
+        return [1]
+    if num == 2:
+        return [1,1]
+    fib=[1,1]
     for i in range(2,num):
-        fib_num = fib_num1 + fib_num2
-        fib_num1 = fib_num2
-        fib_num2 = fib_num
-        arr.append(fib_num)
-    return arr    
+        fib.append(fib[-2]+fib[-1])
+    return fib
+
+        
 
 
    
@@ -25,4 +19,4 @@ def fibonnacci(num):
 
     
 
-print(fibonnacci(1))
+print(fibonnacci(7))
